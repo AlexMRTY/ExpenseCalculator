@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import styles from "./App.module.css";
+
+import Expenses from "./Components/Expenses/Expenses";
+
+// FontAwesome Icons.
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFilter } from "@fortawesome/free-solid-svg-icons";
+// import {
+//   solid,
+//   regular,
+//   brands,
+// } from "@fortawesome/fontawesome-svg-core/import.macro"; // <-- import styles to be used
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={styles.App}>
+      <div className={styles.container}>
+        <div className={styles.header}>
+          <h1 className={styles.title}>Expenses</h1>
+          <FontAwesomeIcon icon={faFilter}  className={styles.filter_icon} />
+        </div>
+      </div>
+      <Expenses />
     </div>
   );
 }

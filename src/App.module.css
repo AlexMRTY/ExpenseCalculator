@@ -1,0 +1,30 @@
+.App {
+  background-color: var(--primary-color);
+  padding: 2rem;
+  min-height: 100vh;
+}
+
+.container {
+  border: 1px solid red;
+  max-width: 40rem;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  color: var(--secondary-acc-color);
+}
+
+.filter_icon {
+  color: var(--secondary-acc-color);
+  font-size: 1.7rem; /* Icon Size */
+}
+
+
