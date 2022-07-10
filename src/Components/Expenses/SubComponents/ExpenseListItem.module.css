@@ -1,0 +1,32 @@
+.info_container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0.5rem 0;
+}
+
+.info_container span {
+    width: 50%;
+}
+
+.price,
+.percentage {
+    font-family: 'Work Sans', sans-serif;
+    text-align: right;
+}
+
+.category,
+.payment_count {
+    font-family: 'Poppins', sans-serif;
+}
+
+.category,
+.price {
+    font-weight: 700;
+    color: var(--secondary-acc-color);
+}
+
+.payment_count,
+.percentage {
+    font-size: 0.8rem;
+    color: var(--no-focus-text);
+}

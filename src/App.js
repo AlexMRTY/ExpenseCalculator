@@ -1,6 +1,9 @@
-import styles from "./App.module.css";
+import React from "react";
+import {v4 as uuidv4} from 'uuid'
 
 import Expenses from "./Components/Expenses/Expenses";
+
+import styles from "./App.module.css";
 
 // FontAwesome Icons.
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -12,6 +15,51 @@ import { faFilter } from "@fortawesome/free-solid-svg-icons";
 // } from "@fortawesome/fontawesome-svg-core/import.macro"; // <-- import styles to be used
 
 function App() {
+  
+  const randomIdGenerator = () => {
+    return uuidv4()
+  }
+
+  const dataPoints = [
+    {
+      id: randomIdGenerator(),
+      date: new Date('2019-10-11'),
+      category: 'Shopping',
+      price: 300
+    },
+    {
+      id: randomIdGenerator(),
+      date: new Date('2020-10-11'),
+      category: 'Travel',
+      price: 500
+    },
+    {
+      id: randomIdGenerator(),
+      date: new Date('2021-10-11'),
+      category: 'Food',
+      price: 120
+    },
+    {
+      id: randomIdGenerator(),
+      date: new Date('2022-10-11'),
+      category: 'Gym',
+      price: 600
+    },
+    {
+      id: randomIdGenerator(),
+      date: new Date('2022-11-11'),
+      category: 'Shopping',
+      price: 50
+    },
+    {
+      id: randomIdGenerator(),
+      date: new Date('2022-11-12'),
+      category: 'Travel',
+      price: 600
+    }
+    
+  ];
+
   return (
     <div className={styles.App}>
       <div className={styles.container}>
@@ -19,8 +67,8 @@ function App() {
           <h1 className={styles.title}>Expenses</h1>
           <FontAwesomeIcon icon={faFilter}  className={styles.filter_icon} />
         </div>
+        <Expenses dataPoints={dataPoints}/>
       </div>
-      <Expenses />
     </div>
   );
 }

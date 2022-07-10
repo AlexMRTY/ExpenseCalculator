@@ -1,0 +1,15 @@
+.container {
+    text-align: center;
+    color: var(--secondary-acc-color);
+}
+
+.date span {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+}
+
+.total span {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+}

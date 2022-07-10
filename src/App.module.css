@@ -5,7 +5,7 @@
 }
 
 .container {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   max-width: 40rem;
   margin: 0 auto;
 }
@@ -25,6 +25,16 @@
 .filter_icon {
   color: var(--secondary-acc-color);
   font-size: 1.7rem; /* Icon Size */
+}
+
+@media screen and (max-width: 420px) {
+  /* .container {
+    margin: 0;
+  } */
+
+  .App {
+    padding: 2rem 1rem;
+  }
 }
 
 
