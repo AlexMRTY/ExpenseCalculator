@@ -1,13 +1,4 @@
-.info_container {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0.5rem 0;
-}
-
-.info_container span {
-    width: 50%;
-}
-
+/* Fonts and Colors  */
 .price,
 .percentage {
     font-family: 'Work Sans', sans-serif;
@@ -30,3 +21,53 @@
     font-size: 0.8rem;
     color: var(--no-focus-text);
 }
+
+/* Other Styling */
+.container {
+    display: flex;
+    align-items: center;
+}
+
+.icon_container {
+    position: relative;
+    background-color: var(--secondary-acc-color);
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 100%;
+    margin-right: 10px;
+}
+
+.icon {
+    /* font-size: 1.5rem; */
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 25px;
+    height: 25px;
+}
+
+
+.info_container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0.5rem 0;
+    width: 90%;
+}
+
+.info_container span {
+    width: 50%;
+}
+
+@media screen and (max-width: 420px) {
+    .category,
+.price {
+    font-weight: 600;
+}
+
+    .info_container {
+        width: 80%;
+    }
+
+    
+}
+

@@ -56,9 +56,30 @@ function App() {
       date: new Date('2022-11-12'),
       category: 'Travel',
       price: 600
+    },
+    {
+      id: randomIdGenerator(),
+      date: new Date('2022-11-02'),
+      category: 'Food',
+      price: 100
     }
-    
   ];
+
+
+  const getTotalExpenses = () => {
+    let total = 0;
+    dataPoints.forEach(item => {
+      total += item.price
+    })
+
+    return total
+  }
+
+  let dataSummary = {
+    totalPaymentCount: dataPoints.length,
+    totalExpenses: getTotalExpenses()
+  }
+
 
   return (
     <div className={styles.App}>
@@ -67,7 +88,7 @@ function App() {
           <h1 className={styles.title}>Expenses</h1>
           <FontAwesomeIcon icon={faFilter}  className={styles.filter_icon} />
         </div>
-        <Expenses dataPoints={dataPoints}/>
+        <Expenses dataPoints={dataPoints} dataSummary={dataSummary}/>
       </div>
     </div>
   );

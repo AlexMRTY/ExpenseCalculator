@@ -33,7 +33,11 @@
   } */
 
   .App {
-    padding: 2rem 1rem;
+    padding: 2rem 0;
+  }
+
+  .header {
+    padding-inline: 0.7rem;
   }
 }
 

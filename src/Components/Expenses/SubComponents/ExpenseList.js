@@ -13,6 +13,7 @@ const ExpenseList = (props) => {
         <div className={styles.container}>
             {
                 props.filteredData.map(item => <ExpenseListItem 
+                    key={item.id}
                     dataPoint={item} 
                     count={props.paymentCount[item.category]}
                     price={props.costByCategory[item.category]}

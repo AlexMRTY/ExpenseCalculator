@@ -8,7 +8,7 @@
 
 @media screen and (max-width: 420px) {
     .card {
-        padding: 1.5rem;
+        padding: 1.5rem 0.7rem;
     }
     
 }
