@@ -60,9 +60,9 @@
 
 @media screen and (max-width: 420px) {
     .category,
-.price {
+    .price {
     font-weight: 600;
-}
+    }
 
     .info_container {
         width: 80%;

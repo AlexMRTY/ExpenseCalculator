@@ -25,8 +25,9 @@ const Expenses = (props) => {
     paymentCount[item.category] = (paymentCount[item.category] || 0) + 1;
 
     // Add up prices which belong in the same category.
+    const priceConvertedToDecimal = 
     costByCategory[item.category] =
-      (costByCategory[item.category] || 0) + item.price;
+      (parseInt(costByCategory[item.category]) || 0) + parseInt(item.price);
     // dataSummary.total += item.price;
   });
 

@@ -5,6 +5,8 @@
   --secondary-acc-color: #EEEEEE;
   --no-focus-bars: #11468F;
   --no-focus-text: rgba(238,238,238,0.5);
+
+  --global-border-radius: 18px;
 }
 
 /* Box sizing rules */
