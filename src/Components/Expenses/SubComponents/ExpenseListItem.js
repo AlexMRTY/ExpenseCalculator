@@ -11,28 +11,28 @@ import {
   faDumbbell,
 } from "@fortawesome/free-solid-svg-icons";
 
-const ExpenseListItem = (props) => {
+const ExpenseListItem = ({ category, price, count, percentage }) => {
   const icon = {
-    Shopping: faCartShopping,
-    Travel: faPlane,
-    Food: faUtensils,
-    Gym: faDumbbell,
+    'Shopping': faCartShopping,
+    'Travel': faPlane,
+    'Food': faUtensils,
+    'Gym': faDumbbell,
   };
 
   return (
     <div className={styles.container}>
-      <div className={styles.icon_container}>
+      <div className={`${styles.icon_container} ${styles[category + '_icon_container']}`}>
         <FontAwesomeIcon
-          className={styles.icon}
-          icon={icon[props.dataPoint.category]}
+          className={`${styles.icon} ${styles[category]}`}
+          icon={icon[category]}
         />
       </div>
 
       <div className={styles.info_container}>
-        <span className={styles.category}>{props.dataPoint.category}</span>
-        <span className={styles.price}>$ {props.price}</span>
-        <span className={styles.payment_count}>{props.count} payments</span>
-        <span className={styles.percentage}>{props.percentage}%</span>
+        <span className={styles.category}>{category}</span>
+        <span className={styles.price}>$ {price}</span>
+        <span className={styles.payment_count}>{count} payments</span>
+        <span className={styles.percentage}>{percentage}%</span>
       </div>
     </div>
   );

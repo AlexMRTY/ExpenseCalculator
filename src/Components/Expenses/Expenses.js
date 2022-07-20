@@ -1,11 +1,11 @@
 import React from "react";
 
 import Total from "./SubComponents/Total";
-import Tabs from "./SubComponents/Tabs";
+// import Tabs from "./SubComponents/Tabs";
 import ExpenseList from "./SubComponents/ExpenseList";
 import Card from "../UI/Card";
 
-import styles from "./Expenses.module.css";
+// import styles from "./Expenses.module.css";
 
 
 const Expenses = (props) => {
@@ -25,7 +25,6 @@ const Expenses = (props) => {
     paymentCount[item.category] = (paymentCount[item.category] || 0) + 1;
 
     // Add up prices which belong in the same category.
-    const priceConvertedToDecimal = 
     costByCategory[item.category] =
       (parseInt(costByCategory[item.category]) || 0) + parseInt(item.price);
     // dataSummary.total += item.price;

@@ -1,0 +1,38 @@
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(1px);
+    z-index: 100;
+}
+
+.filter_container {
+    align-items: center;
+    width: 43rem;
+    height: 30%;
+    margin: 1rem auto;
+    padding: 1rem 1.5rem;
+    border-radius: var(--global-border-radius);
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
+    background-color: var(--secondary-color);
+}
+
+.inputs * {
+    display: block;
+    width: max(15rem);
+    padding: 0.7rem;
+    margin: 3rem auto;
+    border-radius: 10px;
+    border: none;
+}
+
+.inputs *:focus {
+    outline: none;
+}
+
+.icon {
+    background-color: red;
+}
