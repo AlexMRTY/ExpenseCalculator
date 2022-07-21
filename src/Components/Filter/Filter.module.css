@@ -20,6 +20,14 @@
     background-color: var(--secondary-color);
 }
 
+@media screen and (max-width: 420px) {
+    .filter_container {
+        width: 100vw;
+        padding: 1rem 0;
+        margin: 1rem 0;
+    }
+}
+
 .inputs * {
     display: block;
     width: max(15rem);
@@ -33,6 +41,4 @@
     outline: none;
 }
 
-.icon {
-    background-color: red;
-}
+

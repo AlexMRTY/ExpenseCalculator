@@ -5,6 +5,7 @@ import Expenses from "./Components/Expenses/Expenses";
 import AddExpense from "./Components/AddExpenses/AddExpense";
 import Filter from "./Components/Filter/Filter";
 import Header from "./Components/Filter/SubComponents/Header";
+import Chart from "./Components/ExpenseChart/Chart";
 
 import styles from "./App.module.css";
 
@@ -123,6 +124,7 @@ function App() {
           // Returns nothing if Button is not clicked
           <div></div>
         )}
+        <Chart />
         <AddExpense passOnData={handleNewFormData} />
         <Expenses dataPoints={filteredDataPoints} dataSummary={dataSummary} />
       </div>

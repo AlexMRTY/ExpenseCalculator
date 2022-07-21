@@ -1,0 +1,65 @@
+.container {
+    
+    display: block;
+    width: 100%;
+    height: min(45vh, 25rem);
+    border: solid 1px red;
+    margin-top: 2rem;
+}
+
+.chart_container {
+    position: relative;
+    display: block;
+    height: 80%;
+    border: solid 1px green;
+}
+
+.chart_lines_container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.chart_line {
+    display: flex;
+    
+    height: 33%;
+}
+
+.line {
+    border-top: dashed 2px rgba(255, 255, 255, 0.5);
+    width: 100%;
+}
+
+.label {
+    font-family: 'Work Sans', sans-serif;
+    color: rgba(255, 255, 255, 0.5);
+    width: 2rem;
+}
+
+/* Chart bars */
+
+.chart_bar_container {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 4rem;
+}
+
+.bar {
+    position: relative;
+    height: 100%;
+    width: 2.5rem;
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+}
+
+.bar::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--primary-acc-color);
+    border-radius: 10px;
+}

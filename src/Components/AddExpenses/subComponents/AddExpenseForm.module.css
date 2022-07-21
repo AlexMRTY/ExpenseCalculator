@@ -12,6 +12,17 @@
     gap: 2rem;
 }
 
+@media screen and (max-width: 420px) {
+    .container {
+        flex-direction: column;
+        gap: 2rem;
+        align-items: center;
+        padding: 2rem 0;
+    }
+
+
+}
+
 .input {
     width: max(15rem);
     padding: 0.7rem;

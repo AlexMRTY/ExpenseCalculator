@@ -2,3 +2,12 @@
     display: flex;
     flex-direction: row-reverse;
 }
+
+@media screen and (max-width: 420px) {
+    .container {
+        padding-inline: 1rem;
+    }
+    
+}
+
+
