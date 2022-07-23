@@ -7,10 +7,10 @@ const Total = (props) => {
         <div className={styles.container}>
             <div className={styles.date}>
                 {/* <span>{props.data.date}</span>  Update later to dynamic. */}
-                <span>FEBRUARY 12  .  {props.dataSummary.totalPaymentCount} PAYMENTS</span>
+                <span>{props.barInFocus}  .  {props.dataSummary.totalPaymentCount} PAYMENTS</span>
             </div>
             <div className={styles.total}>
-                <span>€ {props.dataSummary.totalExpenses}</span>
+                <span>€ {props.dataSummary.totalExpensesByMonth}</span>
             </div>
         </div>
     )

@@ -11,13 +11,28 @@ import {
   faDumbbell,
 } from "@fortawesome/free-solid-svg-icons";
 
-const ExpenseListItem = ({ category, price, count, percentage }) => {
+const ExpenseListItem = ({ category, price, count, percentage, date, total, tab }) => {
   const icon = {
     'Shopping': faCartShopping,
     'Travel': faPlane,
     'Food': faUtensils,
     'Gym': faDumbbell,
   };
+
+  const percentageForAllPayments = ((price / total) * 100).toFixed(2);
+
+  // Date
+  let formatedDate = '';
+  if (tab === 'all-payment') {
+
+    const months = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
+    const mm = months[date.getMonth()];
+    const yy = date.getFullYear();
+  
+    formatedDate = mm + " " + yy
+  }
+
+  // Payment count or date
 
   return (
     <div className={styles.container}>
@@ -31,11 +46,11 @@ const ExpenseListItem = ({ category, price, count, percentage }) => {
       <div className={styles.info_container}>
         <span className={styles.category}>{category}</span>
         <span className={styles.price}>$ {price}</span>
-        <span className={styles.payment_count}>{count} payments</span>
-        <span className={styles.percentage}>{percentage}%</span>
+        <span className={styles.payment_count}>{tab === 'categories' ? count + ' payments' : formatedDate}</span>
+        <span className={styles.percentage}>{percentage || percentageForAllPayments}%</span>
       </div>
     </div>
   );
-};
+}
 
 export default ExpenseListItem;

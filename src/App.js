@@ -67,44 +67,72 @@ function App() {
   };
 
   // Filter value
-  const [filterYear, setFilterYear] = useState('2022')
+  const [filterYear, setFilterYear] = useState("2022");
   const setFilterValue = (year) => {
-    setFilterYear(year)
-    setOpenFilter(false)
-  }
+    setFilterYear(year);
+    setOpenFilter(false);
+  };
 
-  const filteredDataPoints = dataPoints.filter(item => item.date.getFullYear() === parseInt(filterYear))
+  const [barInFocus, setBarInFocus] = useState("DEC");
+  const handleChartBarClick = (value) => {
+    setBarInFocus(value);
+  };
 
-  
+  const filteredDataPoints = dataPoints.filter(
+    (item) => item.date.getFullYear() === parseInt(filterYear)
+  );
+  const months = [
+    "JAN",
+    "FEB",
+    "MAR",
+    "APR",
+    "MAY",
+    "JUN",
+    "JUL",
+    "AUG",
+    "SEP",
+    "OCT",
+    "NOV",
+    "DEC",
+  ];
+  const filteredDataPointsByMonth = filteredDataPoints.filter(
+    (item) => item.date.getMonth() === months.indexOf(barInFocus)
+  );
+
   // Calculate the sum of all Expenses
-  const getTotalExpenses = () => {
-    let total = 0;
-    filteredDataPoints.forEach((item) => {
-      total += parseInt(item.price);
-    });
-
-    return total;
+  const getTotalExpenses = (period) => {
+    if (period === 'year') {
+      let total = 0;
+      filteredDataPoints.forEach((item) => {
+        total += parseInt(item.price);
+      });
+      return total;
+    } else {
+      let total = 0;
+      filteredDataPointsByMonth.forEach((item) => {
+        total += parseInt(item.price);
+      });
+      return total;
+    }
+    
+    
   };
 
   let dataSummary = {
-    totalPaymentCount: filteredDataPoints.length,
-    totalExpenses: getTotalExpenses(),
+    totalPaymentCount: filteredDataPointsByMonth.length,
+    totalExpenses: getTotalExpenses('year'),
+    totalExpensesByMonth: getTotalExpenses('month')
   };
 
   // Recieve new data from Form, and push to dataPoints.
   const handleNewFormData = (formData) => {
     const formDataWithID = {
-      ...formData,
       id: randomIdGenerator(),
+      ...formData,
     };
     const newFormData = [...dataPoints, formDataWithID];
     setDataPoints(newFormData);
   };
-
-  
-
-  
-
 
   return (
     <div className={styles.App}>
@@ -124,12 +152,20 @@ function App() {
           // Returns nothing if Button is not clicked
           <div></div>
         )}
-        <Chart />
+        <Chart
+          filteredDataPoints={filteredDataPoints}
+          dataSummary={dataSummary}
+          selectedFilterYear={filterYear}
+          barInFocus={barInFocus}
+          setBarInFocus={handleChartBarClick}
+        />
         <AddExpense passOnData={handleNewFormData} />
-        <Expenses dataPoints={filteredDataPoints} dataSummary={dataSummary} />
+        <Expenses
+          dataPoints={filteredDataPointsByMonth}
+          dataSummary={dataSummary}
+          barInFocus={barInFocus}
+        />
       </div>
-
-      
     </div>
   );
 }
