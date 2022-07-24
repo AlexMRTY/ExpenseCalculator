@@ -10,6 +10,7 @@
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    width: min(16rem, 80%);
 }
 
 @media screen and (max-width: 420px) {
@@ -24,10 +25,12 @@
 }
 
 .input {
-    width: max(15rem);
+    -webkit-appearance: none;
+    width: 100%;
     padding: 0.7rem;
     border-radius: 10px;
     border: none;
+    height: 3rem;
 }
 
 .input:focus {
@@ -35,6 +38,11 @@
 }
 
 
+.button_container {
+    display: flex;
+    justify-content: space-around ;
+    width: 100%;
+}
 .button {
     padding: 0.8rem 1rem;
     border: none;
@@ -43,7 +51,7 @@
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
     font-size: 0.9rem;
-    margin-right: 1rem;
+    /* margin-right: 1rem; */
 }
 
 .button.cancel {

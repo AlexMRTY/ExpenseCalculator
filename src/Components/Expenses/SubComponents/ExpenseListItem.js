@@ -26,10 +26,11 @@ const ExpenseListItem = ({ category, price, count, percentage, date, total, tab 
   if (tab === 'all-payment') {
 
     const months = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
+    const dd = date.getDate();
     const mm = months[date.getMonth()];
     const yy = date.getFullYear();
   
-    formatedDate = mm + " " + yy
+    formatedDate = dd + " " + mm + " " + yy
   }
 
   // Payment count or date

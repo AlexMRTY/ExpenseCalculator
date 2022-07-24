@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 import styles from "./Chart.module.css";
 import ChartBar from "./SubComponents/ChartBar";
@@ -11,13 +11,34 @@ const Chart = ({
   dataSummary,
 }) => {
 
-  const [highestMonthlyExpense, setHighestMonthlyExpense] = useState(0)
-  const getMontlyExpenses = (data) => {
-    let values = Object.values(data)
-    setHighestMonthlyExpense(Math.max(...values)*1.1)
-  }
+  // const [highestMonthlyExpense, setHighestMonthlyExpense] = useState(0)
+  // const getMontlyExpenses = (data) => {
+  //   let values = Object.values(data)
+  //   setHighestMonthlyExpense(Math.max(...values)*1.1)
+  // }
 
+  const months = [
+    "JAN",
+    "FEB",
+    "MAR",
+    "APR",
+    "MAY",
+    "JUN",
+    "JUL",
+    "AUG",
+    "SEP",
+    "OCT",
+    "NOV",
+    "DEC",
+  ];
+
+  const monthlyExpense = {};
+  filteredDataPoints.forEach((item) => {
+    monthlyExpense[months[item.date.getMonth()]] =
+    (monthlyExpense[months[item.date.getMonth()]] || 0) + parseInt(item.price);
+  });
   
+  const highestMonthlyExpense = Math.max(...(Object.values(monthlyExpense)))*1.1;
 
   return (
     <div className={styles.container}>
@@ -37,12 +58,12 @@ const Chart = ({
       </div>
 
       <ChartBar
-        filteredDataPoints={filteredDataPoints}
         selectedFilterYear={selectedFilterYear}
         barInFocus={barInFocus}
         setBarInFocus={setBarInFocus}
         total={highestMonthlyExpense}
-        passOnMonthlyExpenses={getMontlyExpenses}
+        monthlyExpense={monthlyExpense}
+        months={months}
       />
     </div>
   );

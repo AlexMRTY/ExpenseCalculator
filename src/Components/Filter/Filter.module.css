@@ -11,8 +11,8 @@
 
 .filter_container {
     align-items: center;
-    width: 43rem;
-    height: 30%;
+    width: min(700px, 95%);
+    height: min(20rem, 30%);
     margin: 1rem auto;
     padding: 1rem 1.5rem;
     border-radius: var(--global-border-radius);
@@ -22,19 +22,22 @@
 
 @media screen and (max-width: 420px) {
     .filter_container {
-        width: 100vw;
         padding: 1rem 0;
-        margin: 1rem 0;
+        margin: 1rem auto;
     }
 }
 
 .inputs * {
+    -webkit-appearance: none;
     display: block;
     width: max(15rem);
     padding: 0.7rem;
     margin: 3rem auto;
     border-radius: 10px;
     border: none;
+    height: 3rem;
+    text-align: center;
+
 }
 
 .inputs *:focus {

@@ -9,42 +9,29 @@ const ChartBar = ({
   filteredDataPoints,
   total,
   passOnMonthlyExpenses,
+  monthlyExpense,
+  months,
 }) => {
   // Calculating Bar height for each month.
-  const months = [
-    "JAN",
-    "FEB",
-    "MAR",
-    "APR",
-    "MAY",
-    "JUN",
-    "JUL",
-    "AUG",
-    "SEP",
-    "OCT",
-    "NOV",
-    "DEC",
-  ];
-  const monthlyExpense = {};
+  
+  
   const barHeight = {};
-  filteredDataPoints.forEach((item) => {
-    monthlyExpense[months[item.date.getMonth()]] =
-      (monthlyExpense[months[item.date.getMonth()]] || 0) + parseInt(item.price);
-  });
+  
   Object.keys(monthlyExpense).forEach((item) => {
     barHeight[item] =
       ((monthlyExpense[item] / total) * 100).toFixed(0).toString() + "%";
   });
 
-  passOnMonthlyExpenses(monthlyExpense);
+  // passOnMonthlyExpenses(monthlyExpense);
 
+  const newMonths = [...months]
   return (
     <div className={styles.chart_bar_container}>
-      {months.reverse().map((m, i) => (
+      {newMonths.reverse().map((m, i) => (
         <div
           className={`
           ${styles.chart_bar} 
-          ${i + 1 === months.length && styles.last_bar}
+          ${i + 1 === newMonths.length && styles.last_bar}
           `}
           onClick={() => {
             setBarInFocus(m);

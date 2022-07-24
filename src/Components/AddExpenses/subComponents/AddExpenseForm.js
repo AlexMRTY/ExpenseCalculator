@@ -7,7 +7,7 @@ import styles from "./AddExpenseForm.module.css";
 const AddExpenseForm = (props) => {
   const [category, setCategory] = useState("Shopping");
   const [price, setPrice] = useState("");
-  const [date, setDate] = useState("");
+  const [date, setDate] = useState("2022-01-01");
 
   const formSubmitHandler = (event) => {
     event.preventDefault();
