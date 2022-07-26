@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import Card from "../../UI/Card";
+
 
 import styles from "./AddExpenseForm.module.css";
 
@@ -29,7 +29,7 @@ const AddExpenseForm = (props) => {
   };
 
   return (
-    <Card>
+    <div className={styles.card}>
       <form className={styles.container} onSubmit={formSubmitHandler}>
         <div className={styles.left_side}>
           <select
@@ -73,7 +73,7 @@ const AddExpenseForm = (props) => {
           </div>
         </div>
       </form>
-    </Card>
+    </div>
   );
 };
 

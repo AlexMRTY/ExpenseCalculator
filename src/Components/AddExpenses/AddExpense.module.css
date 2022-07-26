@@ -1,11 +1,17 @@
 .container {
     display: flex;
-    flex-direction: row-reverse;
+    justify-content: flex-end;
 }
+
+
 
 @media screen and (max-width: 420px) {
     .container {
-        padding-inline: 1rem;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100vw;
+        z-index: 100;
     }
     
 }

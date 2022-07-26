@@ -7,9 +7,14 @@ import styles from "./AddExpenseButton.module.css";
 
 const AddExpenseButton = (props) => {
   return (
-    <button onClick={props.clickHandler} className={styles.button}>
-      <FontAwesomeIcon icon={faPlus} /> Add Expense
-    </button>
+    <div>
+      <button onClick={props.clickHandler} className={styles.button}>
+        <FontAwesomeIcon icon={faPlus} /> Add Expense
+      </button>
+      <button onClick={props.clickHandler} className={styles.mobile_button}>
+        <FontAwesomeIcon icon={faPlus} />
+      </button>
+    </div>
   );
 };
 
